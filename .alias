@@ -1,0 +1,12 @@
+### ls alias ###
+alias dir="ls"
+alias l="ls"
+alias ll="ls -l"
+alias lh="ls -lh"
+alias la="ls -ahl"
+
+### cd alias ###
+alias ..="cd .."
+alias ...="cd ../.."
+alias cd..="cd .."
+alias cd...="cd ../.."

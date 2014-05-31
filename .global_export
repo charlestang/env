@@ -1,0 +1,32 @@
+export CLICOLOR="xterm-color"
+export LSCOLORS="gxfxcxdxbxegedabagacad"
+
+### man page colors
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+
+### detect the shell name
+shell_path=`ps -p $$ | grep $$ | awk '{print $4}'`
+if [[ $shell_path == *zsh ]]; then
+    SHELLNAME=zsh
+elif [[ $shell_path == *bash ]]; then
+    SHELLNAME=bash
+fi
+
+### colors
+green=$'\E[01;32m' #bright green
+blue=$'\E[01;34m' #bright green
+red=$'\E[01;31m' #bright red
+reset=$'\E[0m'
+
+### PS1
+if [[ $SHELLNAME == bash ]]; then
+    export PS1="\u@\[$green\]\s\[$reset\]:\[$blue\]\w\[$reset\] > "
+elif [[ $SHELLNAME == zsh ]]; then
+    export PS1="%n@$green$SHELLNAME$reset:$blue%d$reset > "
+fi
