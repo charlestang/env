@@ -1,4 +1,5 @@
 ### ls alias ###
+alias ls="ls --color"
 alias dir="ls"
 alias l="ls"
 alias ll="ls -l"

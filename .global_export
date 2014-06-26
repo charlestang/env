@@ -3,7 +3,11 @@ export PATH=/usr/local/bin:$PATH
 
 ### colors
 export CLICOLOR="xterm-color"
+## mac color
 export LSCOLORS="gxfxcxdxbxegedabagacad"
+## linux color
+dircolors -b > $ENV_BASE_PATH".lscolors"
+source $ENV_BASE_PATH".lscolors"
 
 ### man page colors
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -34,3 +38,7 @@ if [[ $SHELLNAME == bash ]]; then
 elif [[ $SHELLNAME == zsh ]]; then
     export PS1="%n@$green$SHELLNAME$reset:$blue%d$reset > "
 fi
+
+### VIM
+export MYVIMRC=$ENV_BASE_PATH".vimrc"
+export MYVIMRUNTIME=$ENV_BASE_PATH"vim"
