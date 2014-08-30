@@ -1,13 +1,19 @@
 ### path
 export PATH=/usr/local/bin:$PATH
 
+platform=`uname`
+
 ### colors
 export CLICOLOR="xterm-color"
-## mac color
-export LSCOLORS="gxfxcxdxbxegedabagacad"
-## linux color
-dircolors -b > $ENV_BASE_PATH".lscolors"
-source $ENV_BASE_PATH".lscolors"
+
+if [[ $platform == "Darwin" ]]; then
+    ## mac color
+    export LSCOLORS="gxfxcxdxbxegedabagacad"
+elif [[ $platform == "Linux" ]]; then
+    ## linux color
+    dircolors -b > $ENV_BASE_PATH".lscolors"
+    source $ENV_BASE_PATH".lscolors"
+fi
 
 ### man page colors
 export LESS_TERMCAP_mb=$'\E[01;31m'
