@@ -42,7 +42,8 @@ reset=$'\E[0m'
 if [[ $SHELLNAME == bash ]]; then
     export PS1="\u@\[$green\]\s\[$reset\]:\[$blue\]\w\[$reset\] > "
 elif [[ $SHELLNAME == zsh ]]; then
-    export PS1="%n@$green$SHELLNAME$reset:$blue%d$reset > "
+    #use oh-my-zsh to set the prompt string
+    #export PS1="%n@$green$SHELLNAME$reset:$blue%d$reset > "
 fi
 
 ### Default Editor
