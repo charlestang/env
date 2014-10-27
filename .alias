@@ -1,5 +1,10 @@
 ### ls alias ###
-alias ls="ls --color"
+if [[ $platform == "Darwin" ]]; then
+    alias ls="ls -G"
+else
+    alias ls="ls --color"
+fi
+
 alias dir="ls"
 alias l="ls"
 alias ll="ls -l"

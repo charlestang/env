@@ -53,3 +53,6 @@ export EDITOR=/usr/bin/vim
 ### VIM
 export MYVIMRC=$ENV_BASE_PATH".vimrc"
 export MYVIMRUNTIME=$ENV_BASE_PATH"vim"
+
+### Language
+export LC_ALL="en_US.UTF-8"
