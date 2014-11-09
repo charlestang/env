@@ -1,6 +1,7 @@
 ### ls alias ###
 if [[ $platform == "Darwin" ]]; then
     alias ls="ls -G"
+    alias listen="netstat -f inet -p tcp -nRa | grep 'LISTEN'"
 else
     alias ls="ls --color"
 fi
