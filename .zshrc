@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/env/oh-my-zsh
+export ENV_BASE_PATH=$HOME/env
+export ZSH=$ENV_BASE_PATH/oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/

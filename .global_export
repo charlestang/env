@@ -11,8 +11,8 @@ if [[ $platform == "Darwin" ]]; then
     export LSCOLORS="gxfxcxdxbxegedabagacad"
 elif [[ $platform == "Linux" ]]; then
     ## linux color
-    dircolors -b > $ENV_BASE_PATH".lscolors"
-    source $ENV_BASE_PATH".lscolors"
+    dircolors -b > ~/.lscolors
+    source ~/.lscolors
 fi
 
 ### man page colors
