@@ -52,7 +52,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PROMPT=$SHORT_HOST$PROMPT
+export PROMPT=$USER@$SHORT_HOST$PROMPT
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
