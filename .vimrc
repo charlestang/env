@@ -1,9 +1,8 @@
 let &rtp=$MYVIMRUNTIME.','.&rtp
-execute pathogen#infect()
 syntax enable
 set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
+"let g:solarized_termcolors=256
+"colorscheme solarized
 
 set hls
 set incsearch
