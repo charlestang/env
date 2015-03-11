@@ -1,8 +1,12 @@
-let &rtp=$MYVIMRUNTIME.','.&rtp
+set nocompatible
+filetype off
+let &rtp=$MYVIMRUNTIME.'/bundle/vundle,'.$MYVIMRUNTIME.','.&rtp
+source $MYVIMRUNTIME/bundle.vim
+filetype plugin indent on    " required
 syntax enable
 set background=dark
-"let g:solarized_termcolors=256
-"colorscheme solarized
+let g:solarized_termcolors=256
+colorscheme solarized
 
 set hls
 set incsearch
