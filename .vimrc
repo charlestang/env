@@ -7,6 +7,7 @@ syntax enable
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
+let g:airline#extensions#tabline#enabled=1
 
 set hls
 set incsearch
