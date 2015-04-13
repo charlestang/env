@@ -48,8 +48,8 @@ elif [[ $SHELLNAME == zsh ]]; then
 fi
 
 ### Default Editor
-export SVN_EDITOR=/usr/bin/vim
-export EDITOR=/usr/bin/vim
+export SVN_EDITOR=vim
+export EDITOR=vim
 
 ### VIM
 export MYVIMRC=$ENV_BASE_PATH/.vimrc

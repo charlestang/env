@@ -60,6 +60,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
+source $HOME/env/.global_export
+source $HOME/env/.alias
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -81,5 +84,3 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source $HOME/env/.global_export
-source $HOME/env/.alias
