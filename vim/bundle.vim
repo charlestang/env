@@ -12,6 +12,8 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-surround'
 Plugin 'kien/ctrlp.vim'
-Plugin 'Valloric/YouCompleteMe'
+if v:version >= 703
+    Plugin 'Valloric/YouCompleteMe'
+en
 
 call vundle#end()
