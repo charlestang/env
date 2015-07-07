@@ -54,7 +54,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PROMPT=$USER@$SHORT_HOST$PROMPT
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.composer/vendor/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
