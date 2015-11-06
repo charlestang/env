@@ -17,3 +17,18 @@ ln -s ~/env/.zshrc .zshrc
 ```shell
 chsh -s /bin/zsh
 ```
+
+配置Vim
+```shell
+cd ~
+ln -s ~/env/.vimrc .vimr
+```
+
+这份配置里面，有Vim的相关配置，主要是通过Vundle维护的一些插件，
+
+打开Vim，执行：
+```shell
+:PluginInstall
+```
+
+
