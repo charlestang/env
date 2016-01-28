@@ -84,3 +84,7 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+if [[ -f ~/.alias ]]; then
+    source ~/.alias
+fi
