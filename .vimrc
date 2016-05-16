@@ -1,6 +1,6 @@
 set nocompatible
 filetype off
-let &rtp=$MYVIMRUNTIME.'/bundle/vundle,'.$MYVIMRUNTIME.','.&rtp
+let &rtp=$MYVIMRUNTIME.'/bundle/Vundle.vim,'.$MYVIMRUNTIME.','.&rtp
 source $MYVIMRUNTIME/bundle.vim
 filetype plugin indent on    " required
 syntax enable
