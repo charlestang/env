@@ -1,3 +1,4 @@
+#!/bin/bash
 my_dir=$(cd $(dirname $0) && pwd)
 shell_type=$1
 
@@ -11,12 +12,12 @@ source $my_dir/../.global_export
 
 install_bash() {
     $my_dir/../bash-it/install.sh
-    if [[ $platform == "Darwin" ]]; then
+    if [ $platform = "Darwin" ]; then
         if [ -e ~/.bashrc ]; then
             mv ~/.bashrc ~/.bashrc_backup
         fi
         echo 'source ~/env/.bashrc' > ~/.bashrc
-        source ~/.bashrc
+        echo 'source ~/.bash_profile' >> ~/.bashrc
     else
         echo 'source ~/env/.bashrc' >> ~/.bashrc
     fi
