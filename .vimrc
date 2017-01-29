@@ -1,10 +1,20 @@
 set nocompatible
 filetype off
+
+if has("gui_vimr")
+    let $MYVIMRUNTIME = '~/env/vim'
+endif
+
 let &rtp=$MYVIMRUNTIME.'/bundle/Vundle.vim,'.$MYVIMRUNTIME.','.&rtp
 source $MYVIMRUNTIME/bundle.vim
 filetype plugin indent on    " required
-syntax enable
+
+if has("gui_vimr")
+    set termguicolors
+endif
+
 set background=dark
+syntax enable
 let g:solarized_termcolors=256
 colorscheme solarized
 let g:airline#extensions#tabline#enabled=1
