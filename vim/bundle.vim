@@ -12,10 +12,5 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-surround'
 Plugin 'kien/ctrlp.vim'
-if v:version >= 703
-    if has("patch598")
-        Plugin 'Valloric/YouCompleteMe'
-    en
-en
 
 call vundle#end()
