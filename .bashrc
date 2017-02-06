@@ -8,6 +8,10 @@ if [[ -f ~/.alias ]]; then
     source ~/.alias
 fi
 
+if [[ -f ~/.local_export ]]; then
+    source ~/.local_export
+fi
+
 # Path to the bash it configuration
 export BASH_IT="/root/env/bash-it"
 
