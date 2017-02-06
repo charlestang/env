@@ -1,0 +1,78 @@
+#!/bin/bash
+
+### set colors
+c_w_l_b=$'\E[1;37;40m'  #color white light bold
+c_g_l_b=$'\E[1;32;40m'  #color green light bold
+c_gy_d_n=$'\E[1;30;40m' #color gray dark normal
+c_g_d_u=$'\E[4;32;40m'  #color green dark underline
+c_b_l_n=$'\E[1;36;40m'  #color blue light normal
+c_reset=$'\E[0m'
+
+### colorful echo
+function highlight() {
+  echo -n $c_w_l_b$1$c_reset
+}
+function highnotice() {
+  echo -n $c_g_l_b$1$c_reset
+}
+if [ -L $1 ]; then
+  target_path=`readlink $1`
+else
+  target_path=$1
+fi
+target_path=`cd $1; pwd`
+highlight "the real path of the parameter is: "
+highnotice $target_path
+echo
+echo
+
+echo -n "change own of all directories to user: "
+highlight "www-data"
+find $1 -type d | xargs chown www-data:www-data
+find $1 -type d | xargs chmod 0750
+highnotice " ...OK"
+echo
+echo
+
+echo -n "change own of all files to user: "
+highlight "www-data"
+find $1 -type f | xargs chown www-data:www-data
+find $1 -type f | xargs chmod 0640
+highnotice " ...OK"
+echo
+echo
+
+count=`find $1 -name ".svn" -type d|wc -l`
+if [ $count -gt 0 ]; then
+    echo -n "change own of all .svn directory to user: "
+    highlight "root"
+    echo -n " and the mode to "
+    highlight "0600"
+    find $1 -name ".svn" -type d | xargs chown -R root:root
+    find $1 -name ".svn" -type d | xargs chmod -R 0600
+    highnotice " ...OK"
+    echo
+    echo
+fi
+
+count=`find $1 -name ".git" -type d|wc -l`
+if [ $count -gt 0 ]; then
+    echo -n "change own of all .git directory to user: "
+    highlight "root"
+    echo -n " and the mode to "
+    highlight "0600"
+    find $1 -name ".git" -type d | xargs chown -R root:root
+    find $1 -name ".git" -type d | xargs chmod -R 0600
+    highnotice " ...OK"
+    echo
+    echo
+fi
+
+count=`find $1 -name "readme.txt" -type d |wc -l`
+if [ $count -gt 0 ]; then
+    echo -n "rm all the readme.txt files"
+    find $1 -name "readme.txt" -type d | xargs rm -f
+    highnotice " ...OK"
+    echo
+    echo
+fi
