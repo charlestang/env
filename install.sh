@@ -1,18 +1,14 @@
 #!/bin/bash
-my_dir=$(cd $(dirname $0) && pwd)
-shell_type=$1
+ROOTPATH=$(cd $(dirname $0) && pwd)
+PLATFORM=$(uname)
 
-if [ -z $shell_type ]; then
-    echo Usage: $0 "<shell_name>"
-    echo "<shell_name>" could be zsh or bash
-    exit
-fi 
 
-source $my_dir/../.global_export
+
+source $ROOTPATH/.global_export
 
 install_bash() {
-    $my_dir/../bash-it/install.sh
-    if [ $platform = "Darwin" ]; then
+    $ROOTPATH/bash-it/install.sh
+    if [ $PLATFORM = "Darwin" ]; then
         if [ -e ~/.bashrc ]; then
             mv ~/.bashrc ~/.bashrc_backup
         fi
