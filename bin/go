@@ -1,0 +1,49 @@
+#!/usr/bin/env python
+#coding:utf-8
+
+import sys
+import os
+from yaml import load
+
+server_config_file = os.path.expanduser("~/server_list/config.yml")
+server_config = load(file(server_config_file, 'r'))
+
+menu = []
+line_num = 0;
+for svr in server_config['servers']:
+    line_num += 1
+    menu_line = "\x1b[0;32;40m%d)\x1b[0;31;40m ssh \x1b[0;36;40m%s\x1b[0m@\x1b[0;33;40m%s\t\x1b[1;35;40m#%s\x1b[0m" % (
+           line_num,
+           svr['user'],
+           svr['host'],
+           svr['name']
+    )
+    menu += [menu_line]
+
+print("Please select the server you want to access:")
+print("\n".join(menu)) 
+
+number = 0
+while number < 1 or number > len(server_config['servers']):
+    try:
+        number = int(input("Type in the number:>"))
+    except EOFError:
+        break;
+    except NameError:
+        break;
+    if number >= 1 and number <= len(server_config['servers']) :
+        break
+
+if number > 0:
+    number -= 1
+    svr = server_config['servers'][number]
+    cmd = "ssh -l %s -p %d %s" % (
+            svr['user'],
+            svr['port'],
+            svr['host']
+    )
+    print("Now execute command:")
+    print(cmd)
+    os.system(cmd)
+
+sys.exit(0)

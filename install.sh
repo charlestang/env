@@ -2,8 +2,6 @@
 ROOTPATH=$(cd $(dirname $0) && pwd)
 PLATFORM=$(uname)
 
-
-
 source $ROOTPATH/.global_export
 
 install_bash() {
