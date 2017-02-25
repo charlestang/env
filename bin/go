@@ -9,35 +9,65 @@ server_config_file = os.path.expanduser("~/server_list/config.yml")
 server_config = load(file(server_config_file, 'r'))
 
 menu = []
+servers = []
 line_num = 0;
-for svr in server_config['servers']:
+for svr in server_config['working']:
     line_num += 1
+    user, sep, svr = svr.partition('@')
+    host, sep, svr = svr.partition(':')
+    port, sep, name = svr.partition(' ')
     menu_line = "\x1b[0;32;40m%d)\x1b[0;31;40m ssh \x1b[0;36;40m%s\x1b[0m@\x1b[0;33;40m%s\t\x1b[1;35;40m#%s\x1b[0m" % (
            line_num,
-           svr['user'],
-           svr['host'],
-           svr['name']
+           user,
+           host,
+           name.lstrip()
     )
     menu += [menu_line]
+    servers += [{
+        'host': host,
+        'port': port,
+        'user': user
+    }]
 
 print("Please select the server you want to access:")
+print("For working:")
+print("\n".join(menu) + "\n") 
+menu = []
+
+for svr in server_config['personal']:
+    line_num += 1
+    user, sep, svr = svr.partition('@')
+    host, sep, svr = svr.partition(':')
+    port, sep, name = svr.partition(' ')
+    menu_line = "\x1b[0;32;40m%d)\x1b[0;31;40m ssh \x1b[0;36;40m%s\x1b[0m@\x1b[0;33;40m%s\t\x1b[1;35;40m#%s\x1b[0m" % (
+           line_num,
+           user,
+           host,
+           name.lstrip()
+    )
+    menu += [menu_line]
+    servers += [{
+        'host': host,
+        'port': port,
+        'user': user
+    }]
+
+print("Personal:")
 print("\n".join(menu)) 
 
 number = 0
-while number < 1 or number > len(server_config['servers']):
+while number < 1 or number > len(servers):
     try:
         number = int(input("Type in the number:>"))
-    except EOFError:
+    except (EOFError, NameError, SyntaxError):
         break;
-    except NameError:
-        break;
-    if number >= 1 and number <= len(server_config['servers']) :
+    if number >= 1 and number <= len(servers) :
         break
 
 if number > 0:
     number -= 1
-    svr = server_config['servers'][number]
-    cmd = "ssh -l %s -p %d %s" % (
+    svr = servers[number]
+    cmd = "ssh -l %s -p %s %s" % (
             svr['user'],
             svr['port'],
             svr['host']
