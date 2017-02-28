@@ -13,7 +13,7 @@ if [[ -f ~/.local_export ]]; then
 fi
 
 # Path to the bash it configuration
-export BASH_IT="/root/env/bash-it"
+export BASH_IT="$HOME/env/bash-it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
