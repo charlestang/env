@@ -1,4 +1,5 @@
 set nocompatible
+set term=xterm-256color
 filetype off
 
 if has("gui_vimr")
