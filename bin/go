@@ -31,7 +31,6 @@ def render(servers):
     for c in servers:
         print(template.replace('{width}',str(width)) % c)
 
-menu = []
 servers = []
 working = []
 line_num = 0;
@@ -48,7 +47,7 @@ for svr in server_config['working']:
 print("Please select the server you want to access:")
 print("For working:")
 render(working)
-menu = []
+print('')
 
 personal = []
 for svr in server_config['personal']:
@@ -63,6 +62,7 @@ for svr in server_config['personal']:
 
 print("Personal:")
 render(personal)
+print('')
 
 number = 0
 while number < 1 or number > len(servers):
