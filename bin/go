@@ -17,26 +17,28 @@ from yaml import load
 
 server_config_file = os.path.expanduser("~/server_list/config.yml")
 server_config = load(file(server_config_file, 'r'))
+template = "\x1b[0;32;40m%d) \x1b[0;36;40m%{width}s\x1b[0m@\x1b[0;33;40m%s\t\x1b[1;35;40m#%s\x1b[0m"
 
 def parse(svr):
     user, sep, svr = svr.partition('@')
     host, sep, svr = svr.partition(':')
     port, sep, name = svr.partition(' ')
-    menu_line = "\x1b[0;32;40m%d)\x1b[0;31;40m ssh \x1b[0;36;40m%s\x1b[0m@\x1b[0;33;40m%s\t\x1b[1;35;40m#%s\x1b[0m" % (
-           line_num,
-           user,
-           host,
-           name.lstrip()
-    )
-    return (host, port, user, menu_line)
+    return (host, port, user, name.strip())
+
+def render(servers):
+    length_arr = [ len(c[1]) for c in servers ]
+    width = max(length_arr)
+    for c in servers:
+        print(template.replace('{width}',str(width)) % c)
 
 menu = []
 servers = []
+working = []
 line_num = 0;
 for svr in server_config['working']:
     line_num += 1
-    host, port, user, menu_line = parse(svr)
-    menu += [menu_line]
+    host, port, user, name = parse(svr)
+    working += [(line_num, user, host, name)]
     servers += [{
         'host': host,
         'port': port,
@@ -45,13 +47,14 @@ for svr in server_config['working']:
 
 print("Please select the server you want to access:")
 print("For working:")
-print("\n".join(menu) + "\n") 
+render(working)
 menu = []
 
+personal = []
 for svr in server_config['personal']:
     line_num += 1
-    host, port, user, menu_line = parse(svr)
-    menu += [menu_line]
+    host, port, user, name = parse(svr)
+    personal += [(line_num, user, host, name)]
     servers += [{
         'host': host,
         'port': port,
@@ -59,7 +62,7 @@ for svr in server_config['personal']:
     }]
 
 print("Personal:")
-print("\n".join(menu)) 
+render(personal)
 
 number = 0
 while number < 1 or number > len(servers):
