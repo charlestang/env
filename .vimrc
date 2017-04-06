@@ -1,18 +1,26 @@
 set nocompatible
-set term=xterm-256color
 filetype off
 
+"VimR
 if has("gui_vimr")
     let $MYVIMRUNTIME = '~/env/vim'
 endif
 
 let &rtp=$MYVIMRUNTIME.'/bundle/Vundle.vim,'.$MYVIMRUNTIME.','.&rtp
-source $MYVIMRUNTIME/bundle.vim
+
+if has("gui_vimr")
+    source $MYVIMRUNTIME/bundle-vimr.vim
+el
+    source $MYVIMRUNTIME/bundle.vim
+en
+
 filetype plugin indent on    " required
 
 if has("gui_vimr")
     set termguicolors
-endif
+el
+    set term=xterm-256color
+en
 
 set background=dark
 syntax enable
