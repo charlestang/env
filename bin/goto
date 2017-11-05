@@ -17,7 +17,7 @@ from yaml import load
 
 server_config_file = os.path.expanduser("~/server_list/config.yml")
 server_config = load(file(server_config_file, 'r'))
-template = "\x1b[0;32;40m%d) \x1b[0;36;40m%{width}s\x1b[0m@\x1b[0;33;40m%s\t\x1b[1;35;40m#%s\x1b[0m"
+template = "\x1b[0;32;40m%d) \x1b[0;36;40m%{width}s\x1b[0m@\x1b[0;33;40m%s \t\x1b[1;35;40m#%s\x1b[0m"
 
 def parse(svr):
     user, sep, svr = svr.partition('@')
