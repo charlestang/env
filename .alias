@@ -4,6 +4,9 @@ if [[ $platform == "Darwin" ]]; then
     alias listen="netstat -f inet -p tcp -nRa | grep 'LISTEN'"
 else
     alias ls="ls --color"
+    if [ -f /usr/bin/vim ]; then
+        alias vi='vim'
+    fi
 fi
 
 alias dir="ls"
