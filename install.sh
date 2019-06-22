@@ -3,6 +3,7 @@ ROOTPATH=$(cd $(dirname $0) && pwd)
 PLATFORM=$(uname)
 
 source $ROOTPATH/.global_export
+shell_type=$1
 
 install_bash() {
     $ROOTPATH/bash-it/install.sh
