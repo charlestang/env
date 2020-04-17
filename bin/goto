@@ -25,6 +25,7 @@ def render(servers):
     width = max(length_arr)
     for c in servers:
         print(template.replace('{width}',str(width)) % c)
+    print('')
 
 def section_parse(key, order, servers):
     items = []
@@ -32,11 +33,7 @@ def section_parse(key, order, servers):
         order  += 1
         user, host, port, name = re.split(r'[@:\s]\s*', svr)
         items += [(order, user, host, name)]
-        servers += [{
-            'host': host,
-            'port': port,
-            'user': user
-        }]
+        servers += [(user,port, host)]
     return items, servers, order
 
 
@@ -45,16 +42,13 @@ line_num = 0;
 
 working, servers, line_num = section_parse('working', line_num, servers)
 
-print("Please select the server you want to access:")
-print("For working:")
+print("Please select the server you want to access:\n\nFor working:\n")
 render(working)
-print('')
 
 personal, servers, line_num = section_parse('personal', line_num, servers)
 
-print("Personal:")
+print("Personal:\n")
 render(personal)
-print('')
 
 number = 0
 while number < 1 or number > len(servers):
@@ -68,11 +62,7 @@ while number < 1 or number > len(servers):
 if number > 0:
     number -= 1
     svr = servers[number]
-    cmd = "ssh -l %s -p %s %s" % (
-            svr['user'],
-            svr['port'],
-            svr['host']
-    )
+    cmd = "ssh -l %s -p %s %s" % svr
     print("Now execute command:")
     print(cmd)
     os.system(cmd)
