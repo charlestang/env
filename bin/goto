@@ -20,10 +20,6 @@ server_config_file = os.path.expanduser("~/server_list/config.yml")
 server_config = load(file(server_config_file, 'r'))
 template = "\x1b[0;32;40m%2d) \x1b[0;36;40m%{width}s\x1b[0m@\x1b[0;33;40m%-18s \x1b[1;35;40m#%s\x1b[0m"
 
-def parse(svr):
-    user, host, port, name = re.split(r'[@:\s]\s*', svr)
-    return (host, port, user, name.strip())
-
 def render(servers):
     length_arr = [ len(c[1]) for c in servers ]
     width = max(length_arr)
@@ -34,7 +30,7 @@ def section_parse(key, order, servers):
     items = []
     for svr in server_config[key]:
         order  += 1
-        host, port, user, name = parse(svr)
+        user, host, port, name = re.split(r'[@:\s]\s*', svr)
         items += [(order, user, host, name)]
         servers += [{
             'host': host,
