@@ -31,35 +31,31 @@ def render(servers):
     for c in servers:
         print(template.replace('{width}',str(width)) % c)
 
-def section_parse(key, order):
-    working = []
-    servers = []
+def section_parse(key, order, servers):
+    items = []
     for svr in server_config[key]:
         order  += 1
         host, port, user, name = parse(svr)
-        working += [(order, user, host, name)]
+        items += [(order, user, host, name)]
         servers += [{
             'host': host,
             'port': port,
             'user': user
         }]
-    return working, servers, order
+    return items, servers, order
 
 
 servers = []
-working = []
 line_num = 0;
 
-working, servers, line_num = section_parse('working', line_num)
+working, servers, line_num = section_parse('working', line_num, servers)
 
 print("Please select the server you want to access:")
 print("For working:")
 render(working)
 print('')
 
-personal = []
-personal, new_servers, line_num = section_parse('personal', line_num)
-servers += new_servers
+personal, servers, line_num = section_parse('personal', line_num, servers)
 
 print("Personal:")
 render(personal)
