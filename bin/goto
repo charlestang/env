@@ -1,6 +1,7 @@
 #!/usr/bin/env python2.7
 #coding:utf-8
 
+# dependency: PyYAML 3.12
 # the config file should be a YAML file to describe the server
 # configurations like this:
 # ---
@@ -21,10 +22,9 @@ server_config = load(file(server_config_file, 'r'))
 template = "\x1b[0;32;40m%2d) \x1b[0;36;40m%{width}s\x1b[0m@\x1b[0;33;40m%-18s \x1b[1;35;40m#%s\x1b[0m"
 
 def render(servers):
-    length_arr = [ len(c[1]) for c in servers ]
-    width = max(length_arr)
+    max_width = reduce(max, map(lambda x: len(x[1]), servers))
     for c in servers:
-        print(template.replace('{width}',str(width)) % c)
+        print(template.replace('{width}',str(max_width)) % c)
     print('')
 
 def section_parse(key, order, servers):
@@ -33,7 +33,7 @@ def section_parse(key, order, servers):
         order  += 1
         user, host, port, name = re.split(r'[@:\s]\s*', svr)
         items += [(order, user, host, name)]
-        servers += [(user,port, host)]
+        servers += [(user, port, host)]
     return items, servers, order
 
 
@@ -60,8 +60,7 @@ while number < 1 or number > len(servers):
         break
 
 if number > 0:
-    number -= 1
-    svr = servers[number]
+    svr = servers[number - 1]
     cmd = "ssh -l %s -p %s %s" % svr
     print("Now execute command:")
     print(cmd)
