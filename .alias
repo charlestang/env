@@ -22,4 +22,4 @@ alias ...="cd ../.."
 alias cd..="cd .."
 alias cd...="cd ../.."
 
-alias glogc='git log --graph --date=short --pretty=format:"%h %Cgreen%an%Creset %Cblue%cd%Creset %Cred%d%Creset %s"'
+alias glogc='git log --graph --date=short --pretty=format:"%h %Cgreen%an%Creset %Cblue%cd%Creset %C(auto)%d %s"'
