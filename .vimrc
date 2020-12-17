@@ -1,17 +1,24 @@
+"vim 的主配置文件
+"在 vim 环境中如何直接打开此文件？
+"在命令模式下执行 :e $MYVIMRC
 set nocompatible
 filetype off
 
+"$MYVIMRUNTIME 变量是一个自定义的shell 变量
+"由shell 脚本定义
 "VimR
 if has("gui_vimr")
     let $MYVIMRUNTIME = '~/env/vim'
 endif
 
-let &rtp=$MYVIMRUNTIME.'/bundle/Vundle.vim,'.$MYVIMRUNTIME.','.&rtp
+"rtp 是 runtimepath 的缩写，如何显示其值？
+"在命令模式下执行 :set rtp?
+let &rtp=$MYVIMRUNTIME.','.&rtp
 
 if has("gui_vimr")
-    source $MYVIMRUNTIME/bundle-vimr.vim
+    source $MYVIMRUNTIME/plugin-vimr.vim
 el
-    source $MYVIMRUNTIME/bundle.vim
+    source $MYVIMRUNTIME/plugin.vim
 en
 
 filetype plugin indent on    " required

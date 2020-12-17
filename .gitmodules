@@ -7,3 +7,6 @@
 [submodule "bash-it"]
 	path = bash-it
 	url = https://github.com/Bash-it/bash-it.git
+[submodule "vim/vim-plug"]
+	path = vim/vim-plug
+	url = git@github.com:junegunn/vim-plug.git
