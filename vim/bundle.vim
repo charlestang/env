@@ -6,7 +6,7 @@ Plugin 'gmarik/Vundle.vim'
 " colore scheme solarized
 Plugin 'altercation/vim-colors-solarized'
 
-Plugin 'scrooloose/nerdtree'
+Plugin 'preservim/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'bling/vim-airline'
