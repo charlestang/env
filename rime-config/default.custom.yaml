@@ -1,0 +1,8 @@
+# default.custom.yaml, 全局生效
+# 添加小鹤双拼到方案选单
+patch:
+    schema_list:
+        - schema: double_pinyin_sogou
+        - schema: luna_pinyin_simp
+    
+    menu/page_size: 9
