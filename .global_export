@@ -1,5 +1,6 @@
 ### path
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$ENV_BASE_PATH/bin:$PATH
 
 platform=`uname`
 
