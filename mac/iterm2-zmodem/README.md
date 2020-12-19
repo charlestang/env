@@ -12,13 +12,13 @@ Setup is pretty simple:
 1. Save the `iterm2-send-zmodem.sh` and `iterm2-recv-zmodem.sh` scripts in `/usr/local/bin/`
 2. Set up Triggers in iTerm 2 like so:
 
-    Regular expression: rz waiting to receive.\*\*B0100
-    Action: Run Silent Coprocess
-    Parameters: /usr/local/bin/iterm2-send-zmodem.sh
+ > Regular expression: rz waiting to receive.\*\*B0100<br>
+ > Action: Run Silent Coprocess<br>
+ > Parameters: /usr/local/bin/iterm2-send-zmodem.sh
 
-    Regular expression: \*\*B00000000000000
-    Action: Run Silent Coprocess
-    Parameters: /usr/local/bin/iterm2-recv-zmodem.sh
+ > Regular expression: \*\*B00000000000000<br>
+ > Action: Run Silent Coprocess<br>
+ > Parameters: /usr/local/bin/iterm2-recv-zmodem.sh
 
 To send a file to a remote machine:
 
