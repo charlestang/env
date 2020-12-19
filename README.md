@@ -2,19 +2,19 @@
 
 ## 目录
 
-   * [env](#env)
-      * [安装方法](#安装方法)
-         * [1. 获取所有配置](#1-\xE8\x8E\xB7\xE5\x8F\x96\xE6\x89\x80\xE6\x9C\x89\xE9\x85\x8D\xE7\xBD\xAE)
-         * [2. 初始化zsh](#2-\xE5\x88\x9D\xE5\xA7\x8B\xE5\x8C\x96zsh)
-         * [3. 初始化bash](#3-\xE5\x88\x9D\xE5\xA7\x8B\xE5\x8C\x96bash)
-         * [4. 初始化Vim](#4-\xE5\x88\x9D\xE5\xA7\x8B\xE5\x8C\x96vim)
-      * [快捷命令介绍](#\xE5\xBF\xAB\xE6\x8D\xB7\xE5\x91\xBD\xE4\xBB\xA4\xE4\xBB\x8B\xE7\xBB\x8D)
-         * [1. brew_upgrade](#1-brew_upgrade)
-         * [2.color_sheet彩虹表](#2color_sheet\xE5\xBD\xA9\xE8\x99\xB9\xE8\xA1\xA8)
-         * [3. goto](#3-goto)
-         * [4. online](#4-online)
-         * [5. gh-md-toc](#5-gh-md-toc)
-
+- [env](#env)
+  - [目录](#目录)
+  - [安装方法](#安装方法)
+    - [1. 获取所有配置](#1-获取所有配置)
+    - [2. 初始化`zsh`](#2-初始化`zsh`)
+    - [3. 初始化`bash`](#3-初始化`bash`)
+    - [4. 初始化`Vim`](#4-初始化`vim`)
+  - [快捷命令介绍](#快捷命令介绍)
+    - [1. `brew_upgrade`](#1-`brewupgrade`)
+    - [2.`color_sheet`彩虹表](#2`colorsheet`彩虹表)
+    - [3. `goto`](#3-`goto`)
+    - [4. `online`](#4-`online`)
+    - [5. `md-to-toc`](#5-`md-to-toc`)
 
 ## 安装方法
 
@@ -110,6 +110,6 @@ working:
 
 这是一个`shell`脚本，作用是“上线”。主要是Web开发时候使用的，作用是把一个文件夹下面的文件和目录都变成`www-data`用户的。如果，目录中有`.git`或者`.svn`文件夹，则将这两个文件夹变成`root`用户的，所以，显然执行这个命令需要`root`权限。这是习惯不好的时候，维护服务器时候用的。可以用`sudo`来执行此命令。
 
-### 5. `gh-md-toc`
+### 5. `md-to-toc`
 
-一个脚本，作用是给一个`Markdown`文件生成目录字符串，如果要编写一个很长的`README.md`的时候，用这个生成目录，可以提高阅读体验，主要是为了GitHub下的说明文件用的，因为 GitHub 不支持 `TOC` 这样的语法。代码是开源的可以参看[这里](https://github.com/ekalinin/github-markdown-toc)。
+一个脚本，作用是给一个`Markdown`文件生成目录字符串，如果要编写一个很长的`README.md`的时候，用这个生成目录，可以提高阅读体验，主要是为了GitHub下的说明文件用的，因为 GitHub 不支持 `TOC` 这样的语法。代码是开源的可以参看[这里](https://github.com/amaiorano/md-to-toc)。
