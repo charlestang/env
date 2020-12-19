@@ -6,15 +6,15 @@
   - [目录](#目录)
   - [安装方法](#安装方法)
     - [1. 获取所有配置](#1-获取所有配置)
-    - [2. 初始化`zsh`](#2-初始化`zsh`)
-    - [3. 初始化`bash`](#3-初始化`bash`)
-    - [4. 初始化`Vim`](#4-初始化`vim`)
+    - [2. 初始化`zsh`](#2-初始化zsh)
+    - [3. 初始化`bash`](#3-初始化bash)
+    - [4. 初始化`Vim`](#4-初始化vim)
   - [快捷命令介绍](#快捷命令介绍)
-    - [1. `brew_upgrade`](#1-`brewupgrade`)
-    - [2.`color_sheet`彩虹表](#2`colorsheet`彩虹表)
-    - [3. `goto`](#3-`goto`)
-    - [4. `online`](#4-`online`)
-    - [5. `md-to-toc`](#5-`md-to-toc`)
+    - [1. `brew_upgrade`](#1-brewupgrade)
+    - [2. `color_sheet`彩虹表](#2-colorsheet彩虹表)
+    - [3. `goto`](#3-goto)
+    - [4. `online`](#4-online)
+    - [5. `md-to-toc`](#5-md-to-toc)
 
 ## 安装方法
 
