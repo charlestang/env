@@ -87,7 +87,7 @@ speller:
     #- abbrev/^(.).+$/$1/
 
 translator:
-  dictionary: luna_pinyin
+  dictionary: dictionary
   prism: double_pinyin_sogou
   preedit_format:
     - xform/([aoe])(\w)/0$2/
@@ -140,6 +140,11 @@ reverse_lookup:
 
 punctuator:
   import_preset: symbols            # 这里导入了symbols.yaml 配置文件
+  half_shape:
+    "#": "#"
+    "`": "`"  
+    "=": "="
+    "@": "@"
 
 key_binder:
   import_preset: default
@@ -149,3 +154,5 @@ recognizer:
   patterns:
     reverse_lookup: "`[a-z]*'?$"
     punct: "^/([a-z]+|[0-9])$"      # 这里增加一个正则，才能正确匹配 symbols.yaml 里的符号前缀
+    email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
+    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
