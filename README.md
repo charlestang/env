@@ -83,7 +83,7 @@ ln -s ~/env/.vimrc .vimr
 
 如果在`Mac`上安装了`brew`这个命令的话，可以用这个命令来更新`Mac`上安装的软件。
 
-### 2.`color_sheet`彩虹表
+### 2. `color_sheet`彩虹表
 
 这个命令会在`Term`软件里打印一个颜色码表，主要是编写彩色的`shell`脚本时候的参考手册。
 

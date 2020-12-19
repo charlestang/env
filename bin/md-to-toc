@@ -40,6 +40,8 @@ def to_github_anchor(title):
         anchors[anchor_name] = count
         anchor_name = anchor_name + '-' + str(count)
 
+    anchor_name = anchor_name.replace('`','')
+
     return '#' + anchor_name
 
 
