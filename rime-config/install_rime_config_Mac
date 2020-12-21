@@ -1,0 +1,70 @@
+#!/usr/bin/env python3
+
+import sys
+import os
+from argparse import ArgumentParser
+from argparse import ArgumentDefaultsHelpFormatter
+from datetime import date
+import shutil
+
+def arg_parse():
+    parser = ArgumentParser(
+            description=__doc__,
+            add_help=True,
+            formatter_class=ArgumentDefaultsHelpFormatter)
+    parser.add_argument(
+            "--rime_path",
+            "-p",
+            metavar="<DIR>",
+            type=str,
+            default="~/Library/Rime",
+            help="rime配置文件的目录")
+
+    return parser.parse_args()
+
+def main():
+    print("命令行参数解析")
+    config = arg_parse()
+    
+    print("检查Rime安装目录")
+    config.rime_path = os.path.expanduser(config.rime_path)
+    if not os.path.isdir(config.rime_path):
+        print("配置文件目录非法：%s" % config.rime_path)
+        return 1
+
+    print("创建备份文件夹")
+    suffix = 0
+    base_string = 'backup/' + date.today().isoformat() + '-'
+    while os.path.isdir(os.path.join(config.rime_path, base_string + str(suffix))):
+        suffix += 1
+    backup_dir = os.path.join(config.rime_path, base_string + str(suffix))
+    os.makedirs(backup_dir)
+
+    print("备份现有配置文件")
+    original_files = [
+            'backup',
+            'trash',
+            'build',
+            'sync',
+            'user.yaml',
+            'installation.yaml']
+
+    for entry in os.scandir(config.rime_path):
+        if entry.name in original_files:
+            continue
+        if entry.is_symlink():
+            os.unlink(entry.path)
+            continue
+        shutil.move(entry.path, backup_dir)    
+        
+    print("软链接新配置文件")
+    path = os.getcwd()
+    for entry in os.scandir(path):
+        if entry.name == "install_rime_config_Mac" or entry.name == "README.md":
+            continue
+        os.symlink(entry.path, os.path.join(config.rime_path, entry.name), entry.is_dir())
+
+    print("安装完毕")
+    
+if __name__ == '__main__':
+    sys.exit(main())
