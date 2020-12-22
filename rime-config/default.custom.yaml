@@ -5,4 +5,7 @@ patch:
         - schema: double_pinyin_sogou
         - schema: luna_pinyin_simp
     
+    switcher/save_options:
+      - emoji_suggestion
+
     menu/page_size: 9
