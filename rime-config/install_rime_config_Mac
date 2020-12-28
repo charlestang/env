@@ -45,6 +45,7 @@ def main():
             'backup',
             'trash',
             'build',
+            'dictionary.userdb',
             'sync',
             'user.yaml',
             'installation.yaml']
