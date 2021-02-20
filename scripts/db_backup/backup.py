@@ -4,6 +4,7 @@
 import sys
 import os
 from yaml import load
+from yaml import Loader
 from datetime import datetime
 import dropbox
 from dropbox.files import WriteMode
@@ -13,7 +14,7 @@ if len(sys.argv) < 2:
     print >>sys.stderr, "Usage: %s <config_file>" % sys.argv[0]
     sys.exit(0)
 
-conf = load(file(sys.argv[1], 'r'))
+conf = load(open(sys.argv[1], 'r'), Loader=Loader)
 
 # config file is a YAML looks like
 # ---
@@ -38,11 +39,11 @@ conf = load(file(sys.argv[1], 'r'))
 for db in conf['databases'] :
     filename = "%s_%s.sql" % (db['name'], datetime.now().strftime("%Y%m%d-%H-%M-%S")) 
     filepath = "%s/%s" % (conf['local-backup-path'], filename)
-    cmd = "mysqldump -h%s -u%s -p%s -P%s --single-transaction %s > %s" % (
+    cmd = "mysqldump --host=%s --port=%d --user=%s --password='%s' --no-tablespaces --single-transaction %s > %s" % (
             db['host'],
+            db['port'],
             db['user'], 
             db['pass'], 
-            db['port'], 
             db['name'], 
             filepath
             )
