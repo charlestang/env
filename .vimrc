@@ -26,7 +26,9 @@ filetype plugin indent on    " required
 if has("gui_vimr")
     set termguicolors
 el
-    set term=xterm-256color
+    if !has("nvim")
+        set term=xterm-256color
+    en
 en
 
 set background=dark

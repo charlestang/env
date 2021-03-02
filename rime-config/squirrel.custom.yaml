@@ -1,2 +1,7 @@
 patch:
     style/color_scheme: dark_temple
+    app_options:
+        com.apple.dt.Xcode:
+            ascii_mode: true
+        com.runningwithcrayons.Alfred:
+            ascii_mode: true
