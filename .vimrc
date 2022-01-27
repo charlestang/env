@@ -18,7 +18,9 @@ let &rtp=$MYVIMRUNTIME.','.&rtp
 if has("gui_vimr")
     source $MYVIMRUNTIME/plugin-vimr.vim
 el
-    source $MYVIMRUNTIME/plugin.vim
+    if !exists('g:vscode')
+        source $MYVIMRUNTIME/plugin.vim
+    en
 en
 
 filetype plugin indent on    " required
@@ -31,11 +33,13 @@ el
     en
 en
 
-set background=dark
-syntax enable
-let g:solarized_termcolors=256
-colorscheme solarized
-let g:airline#extensions#tabline#enabled=1
+if !exists('g:vscode')
+    set background=dark
+    syntax enable
+    let g:solarized_termcolors=256
+    colorscheme solarized
+    let g:airline#extensions#tabline#enabled=1
+en
 
 set hls
 set incsearch
