@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python3
 #coding:utf-8
 
 # dependency: PyYAML 3.13
@@ -17,9 +17,10 @@ import os
 import re
 from yaml import load
 from yaml import FullLoader
+from functools import reduce
 
 server_config_file = os.path.expanduser("~/server_list/config.yml")
-server_config = load(file(server_config_file, 'r'), Loader=FullLoader)
+server_config = load(open(server_config_file, 'r'), Loader=FullLoader)
 template = "\x1b[0;32;40m%2d) \x1b[0;36;40m%{width}s\x1b[0m@\x1b[0;33;40m%-18s \x1b[1;35;40m#%s\x1b[0m"
 
 def render(servers):
