@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python3
 # Author: Antonio Maiorano (amaiorano@gmail.com)
 
 import sys

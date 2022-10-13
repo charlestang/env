@@ -15,6 +15,8 @@
     - [3. `goto`](#3-goto)
     - [4. `online`](#4-online)
     - [5. `md-to-toc`](#5-md-to-toc)
+  - [编程环境](#编程环境)
+    - [字体](#字体)
 
 ## 安装方法
 
@@ -113,3 +115,16 @@ working:
 ### 5. `md-to-toc`
 
 一个脚本，作用是给一个`Markdown`文件生成目录字符串，如果要编写一个很长的`README.md`的时候，用这个生成目录，可以提高阅读体验，主要是为了GitHub下的说明文件用的，因为 GitHub 不支持 `TOC` 这样的语法。代码是开源的可以参看[这里](https://github.com/amaiorano/md-to-toc)。
+
+## 编程环境
+
+### 字体
+
+*编码字体*
+
+在 Mac OS 上，使用 Visual Studio Code 时候，[Fira Code](https://github.com/tonsky/FiraCode) 是一款表现很好的编码字体，安装方法如下。
+
+```shell
+brew tap homebrew/cask-fonts
+brew install --cask font-fira-code
+```
