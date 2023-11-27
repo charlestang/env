@@ -11,6 +11,5 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'Exafunction/codeium.vim'
 
 call plug#end()
