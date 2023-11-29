@@ -7,7 +7,7 @@ filetype off
 "$MYVIMRUNTIME 变量是一个自定义的shell 变量
 "由shell 脚本定义
 "VimR
-if has("gui_vimr")
+if has("gui_running")
     let $MYVIMRUNTIME = '~/env/vim'
 endif
 
@@ -15,7 +15,7 @@ endif
 "在命令模式下执行 :set rtp?
 let &rtp=$MYVIMRUNTIME.','.&rtp
 
-if has("gui_vimr")
+if has("gui_running")
     source $MYVIMRUNTIME/plugin-vimr.vim
 el
     if !exists('g:vscode')
@@ -25,7 +25,7 @@ en
 
 filetype plugin indent on    " required
 
-if has("gui_vimr")
+if has("gui_running")
     set termguicolors
 el
     if !has("nvim")

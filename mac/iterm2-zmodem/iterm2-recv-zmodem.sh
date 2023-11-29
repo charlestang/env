@@ -14,7 +14,11 @@ if [[ $FILE = "" ]]; then
 else
 	echo $FILE
 	cd "$FILE"
-	/usr/local/bin/rz 
+    if [ -e /usr/local/bin/rz ]; then
+	    /usr/local/bin/rz
+    else
+        /opt/homebrew/bin/rz
+    fi
 	echo \# Received $FILE
 	echo
 fi

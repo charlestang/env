@@ -13,7 +13,11 @@ if [[ $FILE = "" ]]; then
 	echo
 else
 	echo $FILE
-	/usr/local/bin/sz "$FILE"
+    if [ -e /usr/local/bin/sz ];then
+        /usr/local/bin/sz "$FILE"
+    else
+        /opt/homebrew/bin/sz "$FILE"
+    fi
 	echo \# Received $FILE
 	echo
 fi
