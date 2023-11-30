@@ -14,7 +14,10 @@
 # DOMAIN-SUFFIX: 1
 # TOTAL: 1
 
+DOMAIN-SUFFIX,forefront.ai
 DOMAIN-SUFFIX,bard.google.com
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,auth0.com
 DOMAIN-SUFFIX,bing.com
@@ -38,6 +41,7 @@ DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,observeit.net
 DOMAIN-SUFFIX,poe.com
+DOMAIN-SUFFIX,poecdn.net
 DOMAIN-SUFFIX,segment.io
 DOMAIN-SUFFIX,sentry.io
 DOMAIN-SUFFIX,stripe.com
