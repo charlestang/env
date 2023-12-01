@@ -95,22 +95,6 @@ fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-## >>> conda initialize >>>
-## !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/Users/charles/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-#if [ $? -eq 0 ]; then
-#    eval "$__conda_setup"
-#else
-#    if [ -f "/Users/charles/anaconda3/etc/profile.d/conda.sh" ]; then
-#        . "/Users/charles/anaconda3/etc/profile.d/conda.sh"
-#    else
-#        export PATH="/Users/charles/anaconda3/bin:$PATH"
-#    fi
-#fi
-#unset __conda_setup
-## <<< conda initialize <<<
-
-
 # Created by `pipx` on 2021-05-14 06:37:45
 export PATH="$PATH:/Users/charles/.local/bin"
 
@@ -121,3 +105,13 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/charles/.dart-cli-completion/zsh-config.zsh ]] && . /Users/charles/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
