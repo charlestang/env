@@ -20,6 +20,7 @@
 DOMAIN-SUFFIX,forefront.ai
 DOMAIN-SUFFIX,bard.google.com
 DOMAIN-SUFFIX,play.google.com
+DOMAIN-SUFFIX,safebrowsing.google.com
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,openai.com
