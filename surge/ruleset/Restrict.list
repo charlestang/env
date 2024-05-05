@@ -24,6 +24,7 @@ DOMAIN-SUFFIX,safebrowsing.google.com
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,auth0.com
 DOMAIN-SUFFIX,bing.com
 DOMAIN-SUFFIX,live.com
