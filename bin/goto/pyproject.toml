@@ -1,0 +1,17 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "goto-cli"
+version = "1.0.0"
+description = "A CLI tool for quick SSH server access"
+authors = [{ name = "Charles Tang", email = "charlestang@foxmail.com" }]
+dependencies = ["PyYAML>=3.13"]
+
+
+[project.scripts]
+goto = "goto.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/goto"]
