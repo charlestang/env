@@ -13,19 +13,24 @@ DOMAIN-SUFFIX,localhost
 DOMAIN-SUFFIX,goapi.com
 DOMAIN-SUFFIX,oa.com
 DOMAIN-SUFFIX,dev.com
-IP-CIDR,0.0.0.0/8,no-resolve
+
+# RFC 1918 https://datatracker.ietf.org/doc/html/rfc1918
 IP-CIDR,10.0.0.0/8,no-resolve
-IP-CIDR,100.64.0.0/10,no-resolve
-IP-CIDR,127.0.0.0/8,no-resolve
 IP-CIDR,172.16.0.0/12,no-resolve
 IP-CIDR,192.168.0.0/16,no-resolve
-IP-CIDR,198.18.0.0/16,no-resolve
+
+# Reserved_IP_addresses https://en.wikipedia.org/wiki/Reserved_IP_addresses
+# - IPv4
+IP-CIDR,0.0.0.0/8,no-resolve
+IP-CIDR,100.64.0.0/10,no-resolve
+IP-CIDR,127.0.0.0/8,no-resolve
+IP-CIDR,198.18.0.0/15,no-resolve
 IP-CIDR,224.0.0.0/4,no-resolve
-IP-CIDR,43.135.177.35/0,no-resolve
+# - IPv6
 IP-CIDR6,::1/128,no-resolve
 IP-CIDR6,fc00::/7,no-resolve
 IP-CIDR6,fe80::/10,no-resolve
-IP-CIDR6,fd00::/8,no-resolve
+IP-CIDR6,ff00::/8,no-resolve
 
 # Router managed 路由器管理域名
 DOMAIN,instant.arubanetworks.com
