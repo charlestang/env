@@ -14,11 +14,26 @@
 # DOMAIN-SUFFIX: 1
 # TOTAL: 1
 
-# 发现打开 bard.google.com 的时候，页面还访问了 play.google.com 
+# 发现打开 bard.google.com 的时候，页面还访问了 play.google.com
 # 这是在利用 google play 在判定当前用户所在的地区么？
 
-DOMAIN-SUFFIX,forefront.ai
+# Google Gemini
 DOMAIN-SUFFIX,bard.google.com
+DOMAIN-SUFFIX,gemini.google.com
+# Google DeepMind
+DOMAIN-SUFFIX,deepmind.com
+DOMAIN-SUFFIX,deepmind.google
+# Google Generative Language API
+DOMAIN-SUFFIX,generativelanguage.googleapis.com
+DOMAIN-SUFFIX,geller-pa.googleapis.com
+DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+# Google AI Studio
+DOMAIN,ai.google.dev
+DOMAIN-SUFFIX,makersuite.google.com
+DOMAIN,alkalicore-pa.clients6.google.com
+DOMAIN,alkalimakersuite-pa.clients6.google.com
+DOMAIN-SUFFIX,generativeai.google
+DOMAIN-SUFFIX,forefront.ai
 DOMAIN-SUFFIX,play.google.com
 DOMAIN-SUFFIX,safebrowsing.google.com
 DOMAIN-SUFFIX,claude.ai
