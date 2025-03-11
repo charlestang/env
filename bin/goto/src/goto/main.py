@@ -64,7 +64,7 @@ def main():
     while number < 1 or number > len(servers):
         try:
             number = int(input("Type in the number:>"))
-        except (EOFError, NameError, SyntaxError, KeyboardInterrupt):
+        except (EOFError, NameError, SyntaxError, KeyboardInterrupt, ValueError):
             break
         if number >= 1 and number <= len(servers):
             break
