@@ -28,6 +28,7 @@ DOMAIN-SUFFIX,generativelanguage.googleapis.com
 DOMAIN-SUFFIX,geller-pa.googleapis.com
 DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
 # Google AI Studio
+DOMAIN,jules.google.com
 DOMAIN,ai.google.dev
 DOMAIN-SUFFIX,makersuite.google.com
 DOMAIN,alkalicore-pa.clients6.google.com
