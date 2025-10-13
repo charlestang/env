@@ -20,6 +20,8 @@
 # Google Gemini
 DOMAIN-SUFFIX,bard.google.com
 DOMAIN-SUFFIX,gemini.google.com
+# Stich
+DOMAIN-SUFFIX,withgoogle.com
 # Google DeepMind
 DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,deepmind.google
