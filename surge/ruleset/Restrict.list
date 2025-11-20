@@ -17,6 +17,8 @@
 # 发现打开 bard.google.com 的时候，页面还访问了 play.google.com
 # 这是在利用 google play 在判定当前用户所在的地区么？
 
+# Antigravity
+DOMAIN-SUFFIX,antigravity.google
 # NotebookLM
 DOMAIN-SUFFIX,notebooklm.google
 DOMAIN-SUFFIX,notebooklm.google.com
