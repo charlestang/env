@@ -19,8 +19,16 @@
 
 # Plaud AI
 DOMAIN-SUFFIX,plaud.ai
+# ChatGPT
+DOMAIN-KEYWORD,chatgpt.com
+DOMAIN-KEYWORD,openai.com
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,openai.com
+PROCESS-NAME,/Applications/ChatGPT.app/Contents/MacOS/ChatGPT
 # Antigravity
 DOMAIN-SUFFIX,antigravity.google
+PROCESS-NAME,/Applications/Antigravity.app/Contents/MacOS/Electron
+PROCESS-NAME,/Applications/Antigravity.app/
 # NotebookLM
 DOMAIN-SUFFIX,notebooklm.google
 DOMAIN-SUFFIX,notebooklm.google.com
@@ -49,8 +57,6 @@ DOMAIN-SUFFIX,play.google.com
 DOMAIN-SUFFIX,safebrowsing.google.com
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,anthropic.com
-DOMAIN-SUFFIX,openai.com
-DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,auth0.com
 DOMAIN-SUFFIX,bing.com
 DOMAIN-SUFFIX,live.com
