@@ -1,86 +1,81 @@
 # 限制性服务比如 OpenAI 等
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2023-11-28 15:52:33
-# DOMAIN: 2
-# DOMAIN-KEYWORD: 1
-# DOMAIN-SUFFIX: 20
-# TOTAL: 23
-
-# NAME: BardAI
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2023-11-28 15:52:37
-# DOMAIN-SUFFIX: 1
-# TOTAL: 1
-
-# 发现打开 bard.google.com 的时候，页面还访问了 play.google.com
-# 这是在利用 google play 在判定当前用户所在的地区么？
+# UPDATED: 2026-02-06 13:48:04
+# DOMAIN: 7
+# DOMAIN-KEYWORD: 3
+# DOMAIN-SUFFIX: 42
+# TOTAL: 55
 
 # Plaud AI
 DOMAIN-SUFFIX,plaud.ai
+
 # ChatGPT
 DOMAIN-KEYWORD,chatgpt.com
 DOMAIN-KEYWORD,openai.com
-DOMAIN-SUFFIX,chatgpt.com
-DOMAIN-SUFFIX,openai.com
 PROCESS-NAME,/Applications/ChatGPT.app/Contents/MacOS/ChatGPT
+
 # Antigravity
 DOMAIN-SUFFIX,antigravity.google
-PROCESS-NAME,/Applications/Antigravity.app/Contents/MacOS/Electron
 PROCESS-NAME,/Applications/Antigravity.app/
+PROCESS-NAME,/Applications/Antigravity.app/Contents/MacOS/Electron
+
 # NotebookLM
 DOMAIN-SUFFIX,notebooklm.google
 DOMAIN-SUFFIX,notebooklm.google.com
+
 # Google Gemini
 DOMAIN-SUFFIX,bard.google.com
 DOMAIN-SUFFIX,gemini.google.com
+
 # Stich
 DOMAIN-SUFFIX,withgoogle.com
+
 # Google DeepMind
 DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,deepmind.google
+
 # Google Generative Language API
-DOMAIN-SUFFIX,generativelanguage.googleapis.com
 DOMAIN-SUFFIX,geller-pa.googleapis.com
+DOMAIN-SUFFIX,generativelanguage.googleapis.com
 DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+
 # Google AI Studio
-DOMAIN,labs.google.com
-DOMAIN,jules.google.com
 DOMAIN,ai.google.dev
-DOMAIN-SUFFIX,makersuite.google.com
 DOMAIN,alkalicore-pa.clients6.google.com
 DOMAIN,alkalimakersuite-pa.clients6.google.com
-DOMAIN-SUFFIX,generativeai.google
-DOMAIN-SUFFIX,forefront.ai
-DOMAIN-SUFFIX,play.google.com
-DOMAIN-SUFFIX,safebrowsing.google.com
-DOMAIN-SUFFIX,claude.ai
-DOMAIN-SUFFIX,anthropic.com
-DOMAIN-SUFFIX,auth0.com
-DOMAIN-SUFFIX,bing.com
-DOMAIN-SUFFIX,live.com
 DOMAIN,chatgpt.livekit.cloud
+DOMAIN,jules.google.com
+DOMAIN,labs.google.com
 DOMAIN,static.cloudflareinsights.com
+DOMAIN-KEYWORD,openai
 DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,algolia.net
+DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,api.statsig.com
 DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,bing.com
 DOMAIN-SUFFIX,cdn.cloudflare.net
 DOMAIN-SUFFIX,challenges.cloudflare.com
+DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,client-api.arkoselabs.com
 DOMAIN-SUFFIX,events.statsigapi.net
 DOMAIN-SUFFIX,featuregates.org
+DOMAIN-SUFFIX,forefront.ai
+DOMAIN-SUFFIX,generativeai.google
 DOMAIN-SUFFIX,identrust.com
 DOMAIN-SUFFIX,intercom.io
 DOMAIN-SUFFIX,intercomcdn.com
 DOMAIN-SUFFIX,launchdarkly.com
+DOMAIN-SUFFIX,live.com
+DOMAIN-SUFFIX,makersuite.google.com
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,observeit.net
+DOMAIN-SUFFIX,play.google.com
 DOMAIN-SUFFIX,poe.com
 DOMAIN-SUFFIX,poecdn.net
+DOMAIN-SUFFIX,safebrowsing.google.com
 DOMAIN-SUFFIX,segment.io
 DOMAIN-SUFFIX,sentry.io
 DOMAIN-SUFFIX,stripe.com
-DOMAIN-KEYWORD,openai
