@@ -24,6 +24,11 @@ PROCESS-NAME,/Applications/Antigravity.app/Contents/MacOS/Electron
 DOMAIN-SUFFIX,notebooklm.google
 DOMAIN-SUFFIX,notebooklm.google.com
 
+# Grok
+DOMAIN-SUFFIX,x.ai
+DOMAIN-SUFFIX,grok.x.com
+DOMAIN-SUFFIX,x.com
+
 # Google Gemini
 DOMAIN-SUFFIX,bard.google.com
 DOMAIN-SUFFIX,gemini.google.com
