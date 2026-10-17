@@ -12,6 +12,7 @@ DOMAIN-SUFFIX,plaud.ai
 
 # ChatGPT
 DOMAIN-KEYWORD,chatgpt.com
+DOMAIN-KEYWORD,chatgpt.site
 DOMAIN-KEYWORD,openai.com
 PROCESS-NAME,/Applications/ChatGPT.app/Contents/MacOS/ChatGPT
 
