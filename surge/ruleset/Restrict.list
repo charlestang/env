@@ -29,6 +29,7 @@ DOMAIN-SUFFIX,notebooklm.google.com
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,grok.x.com
 DOMAIN-SUFFIX,x.com
+DOMAIN-SUFFIX,cursor.sh
 
 # Google Gemini
 DOMAIN-SUFFIX,bard.google.com
