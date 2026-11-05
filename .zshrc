@@ -96,10 +96,10 @@ fi
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Created by `pipx` on 2021-05-14 06:37:45
-export PATH="$PATH:/Users/charles/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # pnpm
-export PNPM_HOME="/Users/charles/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -108,7 +108,7 @@ esac
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
-[[ -f /Users/charles/.dart-cli-completion/zsh-config.zsh ]] && . /Users/charles/.dart-cli-completion/zsh-config.zsh || true
+[[ -f "$HOME/.dart-cli-completion/zsh-config.zsh" ]] && . "$HOME/.dart-cli-completion/zsh-config.zsh" || true
 ## [/Completion]
 
 
