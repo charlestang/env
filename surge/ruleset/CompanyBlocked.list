@@ -1,0 +1,9 @@
+# 公司网络封禁的域名
+# 包含主域名及所有子域名：DOMAIN-SUFFIX,example.com
+# 仅匹配指定域名：DOMAIN,example.com
+
+# 115
+DOMAIN-SUFFIX,115.com
+
+# 飞书
+DOMAIN-SUFFIX,feishu.cn
