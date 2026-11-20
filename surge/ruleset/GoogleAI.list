@@ -1,3 +1,6 @@
+# Dia
+PROCESS-NAME,/Applications/Dia.app/
+
 # Google AI / Core
 DOMAIN-SUFFIX,ai.google.dev
 DOMAIN-SUFFIX,ai.studio
@@ -13,8 +16,11 @@ DOMAIN-SUFFIX,generativeai.google
 DOMAIN-SUFFIX,generativelanguage.googleapis.com
 DOMAIN-SUFFIX,notebooklm.google
 DOMAIN-SUFFIX,notebooklm.google.com
-PROCESS-NAME,Antigravity
-PROCESS-NAME,antigravity
+PROCESS-NAME,/Applications/Antigravity.app/
+PROCESS-NAME,/Applications/Gemini.app/
+
+# Don't forget this one
+# PROCESS-NAME,<$HOME>/.local/bin/agy
 
 # Dia
 PROCESS-NAME,Dia.app
